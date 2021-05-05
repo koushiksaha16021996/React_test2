@@ -71,6 +71,83 @@ app.get('/users',(req,res)=>{
 
 
 
+const StudentSchema= mongoose.Schema({
+    "name": "",
+    "email": "",
+    "password":"",
+    
+}, {
+    timestamps:true
+});
+const Student= mongoose.model("Student",StudentSchema)
+
+app.post('/student',(req,res)=>{
+    const student=new Student({
+        name: req.body.name,
+        email: req.body.email,
+        password:req.body.password
+    })
+    student.save().then(data=>{
+        res.send(data)
+    }).catch((err)=>{
+        res.send({
+            message: "some error happened"
+        })
+    })
+});
+
+//get all data from student table --------------------------------
+app.get('/students',(req,res)=>{
+    Student.find().then(users=>{
+        res.send(users)
+    }).catch((err)=>{
+        res.send({
+            message: "some error happened"
+        })
+    })
+});
+
+
+
+
+
+
+const TeacherSchema= mongoose.Schema({
+    "name": "",
+    "email": "",
+    "password":"",
+    
+}, {
+    timestamps:true
+});
+const Teacher= mongoose.model("Teacher",TeacherSchema)
+
+app.post('/teacher',(req,res)=>{
+    const teacher=new Teacher({
+        name: req.body.name,
+        email: req.body.email,
+        password:req.body.password
+    })
+    teacher.save().then(data=>{
+        res.send(data)
+    }).catch((err)=>{
+        res.send({
+            message: "some error happened"
+        })
+    })
+});
+
+//get all data from student table --------------------------------
+app.get('/teachers',(req,res)=>{
+    Teacher.find().then(users=>{
+        res.send(users)
+    }).catch((err)=>{
+        res.send({
+            message: "some error happened"
+        })
+    })
+});
+
 
 
 
