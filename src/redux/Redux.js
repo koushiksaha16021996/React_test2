@@ -64,7 +64,7 @@ export const fetchUser=()=>{
 
 export const getStudent=(user)=>{
     return{
-        type : "showstudent",
+        type :"showstudent",
         payload : user
     }
 }
