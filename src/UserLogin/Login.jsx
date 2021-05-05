@@ -35,16 +35,16 @@ export default function Login() {
                flag="true"
                if(item?.email===loguser.Email && item?.password===loguser.password){
                     if(item?.role=="student"){
-                        alert("student login done")
+                        alert(`${item?.name} successfully login as a student`)
                         history.push(`/student/${item?.name}`)
                     }
                     else if(item?.role=="faculty"){
-                        alert("faculty login done")
+                        alert(`${item?.name} successfully login as a teacher`)
                         history.push(`/teacher/${item?.name}`)
                     }
                }
                else{
-                alert("Password is not valid")
+                alert(`For ${item?.email} password is not valid`)
                }
             }
             
