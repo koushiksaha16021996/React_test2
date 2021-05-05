@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import {fetchStudent} from '../redux/Redux'
 
 export default function Studentdashboard(props) {
-    const {studname} = props
+    const {studname} =props
     
     const state=useSelector((state)=>state)
     const {student}=state.student

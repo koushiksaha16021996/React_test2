@@ -15,8 +15,8 @@ export default function Login() {
     },[])
     console.log(user)
     const [loguser,setloguser] = useState({
-        "Email" : "",
-        "password" : ""
+        "Email" :"",
+        "password" :""
     })
     let name, value
     const handleChange=(e)=>{

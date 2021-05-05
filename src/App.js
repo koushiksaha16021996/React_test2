@@ -28,7 +28,6 @@ function App() {
          <Route exact path="/teacher/:name" component={(props)=><Teacherdashboard teachname={props.match.params.name}/>}/>
 
          
-       
        </Switch>
     
      </BrowserRouter>

@@ -9,7 +9,7 @@ export default function Reg() {
         "name":"",
         "email":"",
         "password":"",
-        "role": ""
+        "role":""
         
     })
     const param=new URLSearchParams();

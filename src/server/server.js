@@ -64,7 +64,7 @@ app.get('/users',(req,res)=>{
         res.send(users)
     }).catch((err)=>{
         res.send({
-            message: "some error happened"
+            message:"some error happened"
         })
     })
 });
