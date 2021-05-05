@@ -38,8 +38,8 @@ export default function Login() {
                         alert("student login done")
                         history.push(`/student/${item?.name}`)
                     }
-                    else if(item?.role=="teacher"){
-                        alert("teacher login done")
+                    else if(item?.role=="faculty"){
+                        alert("faculty login done")
                         history.push(`/teacher/${item?.name}`)
                     }
                }

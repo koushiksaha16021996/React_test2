@@ -25,22 +25,27 @@ const handleInput=(e)=>{
     }
 
 const handlepost=()=>{
-    //e.preventDefault();
-   param.append("name", user.name);
-   param.append("email", user.email);
-   param.append("password", user.password);
-   param.append("role", user.role);
+    if(user.name=="" || user.email=="" || user.password=="" || user.role==""){
+        alert("Fill the required fields")
+    }
+    else{
+        param.append("name", user.name);
+        param.append("email", user.email);
+        param.append("password", user.password);
+        param.append("role", user.role);
+
+         axios.post("http://localhost:4000/user", param,{
+             headers:{
+                 'content-Type': 'application/x-www-form-urlencoded'
+             }
+         }).then(res=>{
+             alert("Registration Successful")
+             console.log("ok")
+             history.push("/login")
+
+         })
+    }
    
-    axios.post("http://localhost:4000/user", param,{
-        headers:{
-            'content-Type': 'application/x-www-form-urlencoded'
-        }
-    }).then(res=>{
-        alert("Registration Successful")
-        console.log("ok")
-        history.push("/login")
-        
-    })
     
 
 }
@@ -67,7 +72,7 @@ const handlepost=()=>{
 
                 <div className="form-group">
                     <label className="RegisterLabel">Role</label>
-                    <input type="text" className="form-control" placeholder="Enter yourself as a student or teacher" name="role" value={user.role} onChange={handleInput}/>
+                    <input type="text" className="form-control" placeholder="Enter yourself as a student or faculty" name="role" value={user.role} onChange={handleInput}/>
                 </div>
                 
                                                                                 
